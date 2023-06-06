@@ -24,7 +24,9 @@ const UserProfileScreen = () => {
       </TouchableOpacity>
     <Pressable onPress={() => {
       navigation.navigate("ScreenAI16");
-    }}><Text style={styles.uLVgrLDh}>{"Upload Picture"}</Text></Pressable></View>;
+    }}><Text style={styles.uLVgrLDh}>{"Upload Picture"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI23");
+    }}><Text style={styles.bpBQIfLi}>{"Delete Profile"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -61,6 +63,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   uLVgrLDh: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  bpBQIfLi: {
     width: 100,
     height: 50,
     lineHeight: 14,
