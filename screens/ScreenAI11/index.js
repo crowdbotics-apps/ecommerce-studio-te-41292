@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <Image source={{
       uri: 'https://tinyurl.com/42evm3m3'
@@ -9,7 +12,9 @@ const LoginScreen = () => {
       <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
       <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>Log In</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI17");
+      }}><Text style={styles.loginButtonText}>Log In</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity>
         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
