@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Button } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 const CouponScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [startDate, setStartDate] = useState(new Date());
@@ -10,13 +13,13 @@ const CouponScreen = () => {
   const [showStartPicker, setShowStartPicker] = useState(false);
   const [showEndPicker, setShowEndPicker] = useState(false);
 
-  const onChangeStartDate = (event, selectedDate) => {
+  const onChangeStartDate = selectedDate => {
     const currentDate = selectedDate || startDate;
     setShowStartPicker(false);
     setStartDate(currentDate);
   };
 
-  const onChangeEndDate = (event, selectedDate) => {
+  const onChangeEndDate = selectedDate => {
     const currentDate = selectedDate || endDate;
     setShowEndPicker(false);
     setEndDate(currentDate);
@@ -37,7 +40,9 @@ const CouponScreen = () => {
       {showEndPicker && <DateTimePicker testID="endPicker" value={endDate} mode="date" display="default" onChange={onChangeEndDate} />}
       <TextInput style={styles.input} onChangeText={setDescription} value={description} placeholder="Description" />
       <Button title="Save" onPress={() => {}} />
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI33");
+    }}><Text style={styles.MbJjWtrO}>{"List of All Coupons"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -63,6 +68,13 @@ const styles = StyleSheet.create({
   dateText: {
     fontSize: 16,
     marginBottom: 10
+  },
+  MbJjWtrO: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default CouponScreen;
