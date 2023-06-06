@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Image } from 'react-native';
 
 const PaymentScreen = () => {
+  const navigation = useNavigation();
   const [cardHolder, setCardHolder] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
@@ -46,7 +49,9 @@ const PaymentScreen = () => {
         <Text style={styles.buttonText}>Google Pay</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.payButton} onPress={handlePay}>
-        <Text style={styles.buttonText}>Pay</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI29");
+      }}><Text style={styles.buttonText}>Pay</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
