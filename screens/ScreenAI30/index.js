@@ -1,9 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Image, Picker } from 'react-native';
 const countries = ['United States', 'Canada', 'United Kingdom'];
 const states = ['Alabama', 'Alaska', 'Arizona'];
 
 const CheckoutScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -35,7 +38,9 @@ const CheckoutScreen = () => {
           {states.map(state => <Picker.Item key={state} label={state} value={state} />)}
         </Picker>}
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI31");
+      }}><Text style={styles.buttonText}>Continue</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Return to Store</Text>

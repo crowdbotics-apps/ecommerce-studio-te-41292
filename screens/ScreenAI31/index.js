@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
 
@@ -14,7 +15,9 @@ const VerificationMessageScreen = ({
       <TouchableOpacity style={styles.closeButton} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.closeButtonText}>Close</Text>
       </TouchableOpacity>
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI32");
+    }}><Text style={styles.LcgJgPGx}>{"Checkout/ Shipping and payment"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -44,6 +47,13 @@ const styles = StyleSheet.create({
   closeButtonText: {
     color: '#FFFFFF',
     fontSize: 16
+  },
+  LcgJgPGx: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default VerificationMessageScreen;
