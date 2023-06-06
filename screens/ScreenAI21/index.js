@@ -1,28 +1,28 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-const FAQ_DATA = [{
-  id: '1',
-  question: 'What is React Native?',
-  answer: 'React Native is a framework for building native mobile apps using JavaScript and React.'
+import React from "react";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+const ECOMMERCE_FAQ_DATA = [{
+  id: "1",
+  question: "What payment methods do you accept?",
+  answer: "We accept credit cards, debit cards, and PayPal."
 }, {
-  id: '2',
-  question: 'How do I get started with React Native?',
-  answer: 'To get started, follow the official documentation on the React Native website.'
+  id: "2",
+  question: "How long does shipping take?",
+  answer: "Shipping usually takes 3-5 business days."
 }, {
-  id: '3',
-  question: 'What platforms does React Native support?',
-  answer: 'React Native supports iOS, Android, and other platforms like Windows and macOS.'
+  id: "3",
+  question: "Can I return or exchange an item?",
+  answer: "Yes, we offer a 30-day return and exchange policy."
 }, {
-  id: '4',
-  question: 'Can I use my existing React knowledge?',
-  answer: 'Yes, React Native is based on React, so your existing knowledge will be helpful.'
+  id: "4",
+  question: "How do I track my order?",
+  answer: "You will receive a tracking number via email once your order has shipped."
 }, {
-  id: '5',
-  question: 'How is React Native different from React?',
-  answer: 'React Native is for building native mobile apps, while React is for building web apps.'
+  id: "5",
+  question: "Do you ship internationally?",
+  answer: "Yes, we ship to most countries worldwide."
 }];
 
-const FAQScreen = () => {
+const EcommerceFAQScreen = () => {
   const renderItem = ({
     item
   }) => <View style={styles.itemContainer}>
@@ -31,30 +31,30 @@ const FAQScreen = () => {
     </View>;
 
   return <View style={styles.container}>
-      <Text style={styles.title}>Frequently Asked Questions</Text>
-      <FlatList data={FAQ_DATA} renderItem={renderItem} keyExtractor={item => item.id} />
+      <Text style={styles.title}>Ecommerce Frequently Asked Questions</Text>
+      <FlatList data={ECOMMERCE_FAQ_DATA} renderItem={renderItem} keyExtractor={item => item.id} />
     </View>;
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: "#F5F5F5",
     paddingHorizontal: 20
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "#333",
+    textAlign: "center",
     marginVertical: 20
   },
   itemContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     borderRadius: 10,
     padding: 15,
     marginBottom: 15,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2
@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
   },
   question: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
+    fontWeight: "bold",
+    color: "#333",
     marginBottom: 10
   },
   answer: {
     fontSize: 16,
-    color: '#666'
+    color: "#666"
   }
 });
-export default FAQScreen;
+export default EcommerceFAQScreen;
