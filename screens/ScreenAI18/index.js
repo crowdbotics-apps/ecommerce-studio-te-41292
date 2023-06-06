@@ -49,7 +49,9 @@ const SettingsScreen = () => {
       navigation.navigate("ScreenAI21");
     }}><Text style={styles.JttMHlEE}>{"Frequently Asked Questions"}</Text></Pressable><Pressable onPress={() => {
       navigation.navigate("ScreenAI24");
-    }}><Text style={styles.BNKuNXRW}>{"Notification"}</Text></Pressable></ScrollView>;
+    }}><Text style={styles.BNKuNXRW}>{"Notification"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI22");
+    }}><Text style={styles.ByrfWqgw}>{"Invite Friends"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -86,6 +88,13 @@ const styles = StyleSheet.create({
     borderRadius: 0
   },
   BNKuNXRW: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  ByrfWqgw: {
     width: 100,
     height: 50,
     lineHeight: 14,
