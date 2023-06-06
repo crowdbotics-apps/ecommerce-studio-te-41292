@@ -37,7 +37,9 @@ const SettingsScreen = () => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Log Out</Text>
       </TouchableOpacity>
-    </ScrollView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI21");
+    }}><Text style={styles.JttMHlEE}>{"Frequently Asked Questions"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -65,6 +67,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#ffffff',
     textAlign: 'center'
+  },
+  JttMHlEE: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default SettingsScreen;
