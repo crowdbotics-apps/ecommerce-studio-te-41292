@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const UserDashboard = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>User Dashboard</Text>
@@ -43,7 +46,9 @@ const UserDashboard = () => {
           <Image style={styles.navIcon} source={{
           uri: 'https://tinyurl.com/42evm3m3'
         }} />
-          <Text style={styles.navText}>Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI18");
+        }}><Text style={styles.navText}>Settings</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
