@@ -22,7 +22,9 @@ const UserProfileScreen = () => {
         navigation.navigate("ScreenAI17");
       }}><Text style={styles.nextButtonText}>Next</Text></Pressable>
       </TouchableOpacity>
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI16");
+    }}><Text style={styles.uLVgrLDh}>{"Upload Picture"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -57,6 +59,13 @@ const styles = StyleSheet.create({
   nextButtonText: {
     color: 'white',
     fontWeight: 'bold'
+  },
+  uLVgrLDh: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default UserProfileScreen;
