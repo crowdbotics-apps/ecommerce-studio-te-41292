@@ -28,7 +28,9 @@ const UserDashboard = () => {
         }} />
           <Text style={styles.menuText}>Menu 3</Text>
         </TouchableOpacity>
-      </View>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI34");
+      }}><Text style={styles.LuUtShHQ}>{"Add/Edit Coupon"}</Text></Pressable></View>
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
           <Image style={styles.navIcon} source={{
@@ -111,6 +113,13 @@ const styles = StyleSheet.create({
   navText: {
     color: '#FFFFFF',
     fontSize: 12
+  },
+  LuUtShHQ: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default UserDashboard;

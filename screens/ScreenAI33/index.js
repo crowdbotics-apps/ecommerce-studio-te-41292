@@ -66,7 +66,7 @@ const CouponScreen = () => {
       <TouchableOpacity style={styles.addButton} onPress={() => Alert.alert('Add a new coupon')}>
         <Text style={styles.addButtonText}>Add a new coupon</Text>
       </TouchableOpacity>
-    </View>;
+    <Text style={styles.wNfjAKNx}>Lorem ipsum…</Text></View>;
 };
 
 const styles = StyleSheet.create({
@@ -128,6 +128,13 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: '#FFFFFF',
     fontSize: 16
+  },
+  wNfjAKNx: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default CouponScreen;
