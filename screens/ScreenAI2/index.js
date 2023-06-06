@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 
 const OnboardingScreen = () => {
+  const navigation = useNavigation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [{
     image: 'https://tinyurl.com/42evm3m3',
@@ -26,7 +28,9 @@ const OnboardingScreen = () => {
     }
   };
 
-  return <View style={styles.container}>
+  return <View style={styles.container} onPress={() => {
+    navigation.navigate("ScreenAI3");
+  }}>
       <Image source={{
       uri: slides[currentIndex].image
     }} style={styles.image} />
