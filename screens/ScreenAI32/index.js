@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ProgressBarAndroid } from 'react-native';
 
 const App = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <TouchableOpacity style={styles.backButton}>
         <Text style={styles.backButtonText}>Back</Text>
@@ -33,7 +36,9 @@ const App = () => {
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.continueButton}>
-        <Text style={styles.continueButtonText}>Continue</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI26");
+      }}><Text style={styles.continueButtonText}>Continue</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.returnButton}>
         <Text style={styles.returnButtonText}>Return to store</Text>

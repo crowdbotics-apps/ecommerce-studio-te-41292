@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [address1, setAddress1] = useState('');
@@ -17,10 +20,12 @@ const ProfileScreen = () => {
   const handleUpdate = () => {// Update logic here
   };
 
-  return <View style={styles.container}>
+  return <Pressable onPress={() => {
+    navigation.navigate("ScreenAI28");
+  }}><View style={styles.container}>
       <Image style={styles.logo} source={{
-      uri: 'https://tinyurl.com/42evm3m3'
-    }} />
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} />
       <TextInput style={styles.input} placeholder="First Name" onChangeText={setFirstName} value={firstName} />
       <TextInput style={styles.input} placeholder="Last Name" onChangeText={setLastName} value={lastName} />
       <TextInput style={styles.input} placeholder="Address Line 1" onChangeText={setAddress1} value={address1} />
@@ -35,7 +40,7 @@ const ProfileScreen = () => {
       <TouchableOpacity style={styles.button} onPress={handleUpdate}>
         <Text style={styles.buttonText}>Update</Text>
       </TouchableOpacity>
-    </View>;
+    </View></Pressable>;
 };
 
 const styles = StyleSheet.create({
