@@ -10,16 +10,22 @@ const SettingsScreen = () => {
       uri: 'https://tinyurl.com/42evm3m3'
     }} />
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Edit Profile</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI15");
+      }}><Text style={styles.buttonText}>Edit Profile</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Edit Payment</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Privacy Policy</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI13");
+      }}><Text style={styles.buttonText}>Privacy Policy</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Terms and Conditions</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI12");
+      }}><Text style={styles.buttonText}>Terms and Conditions</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Pressable onPress={() => {
