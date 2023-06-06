@@ -26,9 +26,11 @@ const SignUpScreen = () => {
             Terms and Conditions
           </Text></Pressable>{' '}
           and{' '}
-          <Text style={styles.link} onPress={() => {}}>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI13");
+        }}><Text style={styles.link} onPress={() => {}}>
             Privacy Policy
-          </Text>
+          </Text></Pressable>
         </Text>
       </View>
       <TouchableOpacity style={styles.button}>
