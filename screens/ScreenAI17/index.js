@@ -30,7 +30,9 @@ const UserDashboard = () => {
         </TouchableOpacity>
       <Pressable onPress={() => {
         navigation.navigate("ScreenAI34");
-      }}><Text style={styles.LuUtShHQ}>{"Add/Edit Coupon"}</Text></Pressable></View>
+      }}><Text style={styles.LuUtShHQ}>{"Add/Edit Coupon"}</Text></Pressable><Pressable onPress={() => {
+        navigation.navigate("ScreenAI35");
+      }}><Text style={styles.KvqXYXkR}>{"Report/Flag user"}</Text></Pressable></View>
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
           <Image style={styles.navIcon} source={{
@@ -115,6 +117,13 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   LuUtShHQ: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  KvqXYXkR: {
     width: 100,
     height: 50,
     lineHeight: 14,
