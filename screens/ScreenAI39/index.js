@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const ProductScreen = () => {
+  const navigation = useNavigation();
   const product = {
     name: 'Sample Product',
     type: 'Physical',
@@ -21,7 +24,9 @@ const ProductScreen = () => {
           Available Quantity: {product.availableQuantity}
         </Text>}
       <TouchableOpacity style={styles.addToCartButton}>
-        <Text style={styles.buttonText}>Add to cart</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI30");
+      }}><Text style={styles.buttonText}>Add to cart</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.backButton}>
         <Text style={styles.buttonText}>Back</Text>
