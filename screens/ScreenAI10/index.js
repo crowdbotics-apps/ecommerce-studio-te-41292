@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const SignUpScreen = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -17,9 +20,11 @@ const SignUpScreen = () => {
         </TouchableOpacity>
         <Text style={styles.checkboxText}>
           I agree to the{' '}
-          <Text style={styles.link} onPress={() => {}}>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI12");
+        }}><Text style={styles.link} onPress={() => {}}>
             Terms and Conditions
-          </Text>{' '}
+          </Text></Pressable>{' '}
           and{' '}
           <Text style={styles.link} onPress={() => {}}>
             Privacy Policy

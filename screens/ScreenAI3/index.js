@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useEffect } from 'react';
 import { View, Text, Image, StyleSheet, StatusBar, Dimensions } from 'react-native';
 
@@ -14,12 +15,14 @@ const SplashScreen = ({
       <Image source={{
       uri: 'https://tinyurl.com/42evm3m3'
     }} style={styles.backgroundImage} />
-      <View style={styles.content}>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI10");
+    }}><View style={styles.content}>
         <Text style={styles.title}>Welcome to MyApp</Text>
         <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} style={styles.logo} />
-      </View>
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} style={styles.logo} />
+      </View></Pressable>
     </View>;
 };
 
