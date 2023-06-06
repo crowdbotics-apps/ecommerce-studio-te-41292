@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, Image, ScrollView } from 'react-native';
 
 const ReportScreen = () => {
+  const navigation = useNavigation();
   const [selectedReason, setSelectedReason] = useState(null);
   const [otherReason, setOtherReason] = useState('');
   const reasons = ['Spam', 'Pornography', 'Hatred and bullying', 'Self-harm', 'Violent, gory and harmful content', 'Child porn', 'Illegal activities (e.g. drug uses)', 'Deceptive content', 'Copyright and trademark infringement', 'Other'];
@@ -16,17 +19,19 @@ const ReportScreen = () => {
       </TouchableOpacity>);
   };
 
-  return <ScrollView style={styles.container}>
+  return <Pressable onPress={() => {
+    navigation.navigate("ScreenAI29");
+  }}><ScrollView style={styles.container}>
       <Image source={{
-      uri: 'https://tinyurl.com/42evm3m3'
-    }} style={styles.image} />
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} style={styles.image} />
       <Text style={styles.title}>Why are you reporting this?</Text>
       <View style={styles.reasonsContainer}>{renderReasons()}</View>
       {selectedReason === 'Other' && <TextInput style={styles.input} onChangeText={setOtherReason} value={otherReason} placeholder="Enter your reason" />}
       <TouchableOpacity style={styles.submitButton}>
         <Text style={styles.submitButtonText}>Submit Report</Text>
       </TouchableOpacity>
-    </ScrollView>;
+    </ScrollView></Pressable>;
 };
 
 const styles = StyleSheet.create({
