@@ -34,7 +34,9 @@ const UserDashboard = () => {
         navigation.navigate("ScreenAI35");
       }}><Text style={styles.KvqXYXkR}>{"Report/Flag user"}</Text></Pressable><Pressable onPress={() => {
         navigation.navigate("ScreenAI36");
-      }}><Text style={styles.ekFHZsMB}>{"Filter/Location"}</Text></Pressable></View>
+      }}><Text style={styles.ekFHZsMB}>{"Filter/Location"}</Text></Pressable><Pressable onPress={() => {
+        navigation.navigate("ScreenAI38");
+      }}><Text style={styles.ykdknkZa}>{"Product Category"}</Text></Pressable></View>
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
           <Image style={styles.navIcon} source={{
@@ -133,6 +135,13 @@ const styles = StyleSheet.create({
     borderRadius: 0
   },
   ekFHZsMB: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  ykdknkZa: {
     width: 100,
     height: 50,
     lineHeight: 14,
