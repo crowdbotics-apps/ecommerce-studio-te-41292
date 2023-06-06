@@ -35,7 +35,9 @@ const SettingsScreen = () => {
         <Text style={styles.buttonText}>Delete Account</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Log Out</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI41");
+      }}><Text style={styles.buttonText}>Log Out</Text></Pressable>
       </TouchableOpacity>
     <Pressable onPress={() => {
       navigation.navigate("ScreenAI21");
