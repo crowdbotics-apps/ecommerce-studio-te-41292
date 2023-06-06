@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react-native';
 const notifications = [{
@@ -18,6 +20,8 @@ const notifications = [{
 }];
 
 const NotificationListScreen = () => {
+  const navigation = useNavigation();
+
   const renderItem = ({
     item
   }) => <TouchableOpacity style={styles.item}>
@@ -38,7 +42,9 @@ const NotificationListScreen = () => {
   return <View style={styles.container}>
       <Text style={styles.header}>List of all notifications</Text>
       <FlatList data={notifications} renderItem={renderItem} keyExtractor={item => item.id} />
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI25");
+    }}><Text style={styles.CeFazale}>{"Notification Settings"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -89,6 +95,13 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontSize: 14
+  },
+  CeFazale: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default NotificationListScreen;

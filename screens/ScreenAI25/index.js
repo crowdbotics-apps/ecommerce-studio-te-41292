@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Switch, StyleSheet, Image } from 'react-native';
 
 const NotificationSettings = () => {
+  const navigation = useNavigation();
   const [inAppNotifications, setInAppNotifications] = useState(false);
   const [pushNotifications, setPushNotifications] = useState(false);
   const [emailNotifications, setEmailNotifications] = useState(false);
@@ -18,7 +21,9 @@ const NotificationSettings = () => {
         <Switch value={inAppNotifications} onValueChange={setInAppNotifications} />
       </View>
       <View style={styles.settingRow}>
-        <Text style={styles.settingText}>Push Notifications</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI40");
+      }}><Text style={styles.settingText}>Push Notifications</Text></Pressable>
         <Switch value={pushNotifications} onValueChange={setPushNotifications} />
       </View>
       <View style={styles.settingRow}>
