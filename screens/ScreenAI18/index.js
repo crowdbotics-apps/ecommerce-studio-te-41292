@@ -47,7 +47,9 @@ const SettingsScreen = () => {
       </TouchableOpacity>
     <Pressable onPress={() => {
       navigation.navigate("ScreenAI21");
-    }}><Text style={styles.JttMHlEE}>{"Frequently Asked Questions"}</Text></Pressable></ScrollView>;
+    }}><Text style={styles.JttMHlEE}>{"Frequently Asked Questions"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI24");
+    }}><Text style={styles.BNKuNXRW}>{"Notification"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -77,6 +79,13 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   JttMHlEE: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  BNKuNXRW: {
     width: 100,
     height: 50,
     lineHeight: 14,
