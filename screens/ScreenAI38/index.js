@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet, Picker } from 'react-native';
 const gifts = [{
@@ -33,10 +34,10 @@ const GiftScreen = () => {
       </View>
       <FlatList data={gifts} renderItem={({
       item
-    }) => <View style={styles.giftContainer}>
+    }) => <Pressable><View style={styles.giftContainer}>
             <Image source={{
-        uri: item.imageUrl
-      }} style={styles.giftImage} />
+          uri: item.imageUrl
+        }} style={styles.giftImage} />
             <View style={styles.giftInfo}>
               <Text style={styles.giftName}>{item.name}</Text>
               <Text>Type: {item.type}</Text>
@@ -49,7 +50,7 @@ const GiftScreen = () => {
                 <Text style={styles.detailsLink}>See details</Text>
               </TouchableOpacity>
             </View>
-          </View>} keyExtractor={item => item.id.toString()} />
+          </View></Pressable>} keyExtractor={item => item.id.toString()} />
     </View>;
 };
 
