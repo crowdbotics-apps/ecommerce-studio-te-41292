@@ -17,7 +17,9 @@ const LoginScreen = () => {
       }}><Text style={styles.loginButtonText}>Log In</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI14");
+      }}><Text style={styles.forgotPasswordText}>Forgot Password?</Text></Pressable>
       </TouchableOpacity>
       <View style={styles.socialContainer}>
         <TouchableOpacity style={styles.socialButton}>
