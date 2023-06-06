@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
 const dummyData = [{
@@ -36,11 +38,14 @@ const SearchResultItem = ({
   </TouchableOpacity>;
 
 const SearchResultScreen = () => {
-  return <View style={styles.container}>
+  const navigation = useNavigation();
+  return <Pressable onPress={() => {
+    navigation.navigate("ScreenAI38");
+  }}><View style={styles.container}>
       <FlatList data={dummyData} renderItem={({
-      item
-    }) => <SearchResultItem title={item.title} description={item.description} />} keyExtractor={item => item.id} />
-    </View>;
+        item
+      }) => <SearchResultItem title={item.title} description={item.description} />} keyExtractor={item => item.id} />
+    </View></Pressable>;
 };
 
 const styles = StyleSheet.create({

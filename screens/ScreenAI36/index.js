@@ -1,10 +1,14 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, Picker } from 'react-native';
 
 const AwayFromHomeScreen = () => {
+  const navigation = useNavigation();
   const [mileRange, setMileRange] = useState('10');
   const [customMiles, setCustomMiles] = useState('');
-  return <ScrollView style={styles.container}>
+  return <ScrollView style={styles.container} onPress={() => {
+    navigation.navigate("ScreenAI37");
+  }}>
       <View style={styles.section1}>
         <TouchableOpacity style={styles.backButton}>
           <Text style={styles.backButtonText}>Back</Text>
