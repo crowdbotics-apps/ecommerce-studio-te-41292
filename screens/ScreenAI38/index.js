@@ -47,7 +47,7 @@ const GiftScreen = () => {
                 <Text style={styles.buttonText}>Add to cart</Text>
               </TouchableOpacity>
               <TouchableOpacity>
-                <Text style={styles.detailsLink}>See details</Text>
+                <Pressable><Text style={styles.detailsLink}>See details</Text></Pressable>
               </TouchableOpacity>
             </View>
           </View></Pressable>} keyExtractor={item => item.id.toString()} />
